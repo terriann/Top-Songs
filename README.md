@@ -1,8 +1,19 @@
-Quick Template
+Quick Static Site (QSS)
 ==============
 
-Quick template to build a static site using backbone, grunt, scss &amp; twig.js
+Quick static site is a website template to build a static website. It's a perfect developer tool to be able to stay organized when working on small client sites and PhoneGap projects.
 
+QSS includes basic html, scss files and the [backbone.js](http://backbonejs.org/), [twig.js](https://github.com/justjohn/twig.js/) & [PhoneGap](http://phonegap.com/) javascript libraries to get you started.
+
+##How would I use it?
+
+###Build a small static site
+Have a client that needs a small website, maybe a single page or just a few HMTL pages? If you're used to includes for reusable code and sass to organize & maintain your styles and you want to easily develop but be able to support a site with minified CSS and Javascript this project makes it easy to do so! All you have to do is upload the content in the `www/build` directory and they won't even need a fancy hosting plan.
+
+###Build the content for a PhoneGap app
+Phone gap is neat but you need to serve static HTML, so no server side functionality allowed and again no includes.  Just like described above for static websites you can use this template to build easily maintainable static content to serve inside the PhoneGap app.  Still need dyamic content form a webserver? Use javascript to fetch content from your webserver. Bam, done.
+
+##How to Use QSS
 This project will allow you to edit the source files (located in `www/src`) and leverage different grunt modules to speed up your development.  The modules already included in the package.json file are as follows:
 
 - Grunt watch `grunt-contrib-watch`
@@ -68,5 +79,13 @@ The main reason I created this template with these specific Grunt modules is so 
 [Insert Phonegap instructions here at some point]
 
 
-###Additional Information
+##Additional Information
+###Why did you make this project?
+I initially created this as a base template for a few projects I was working on. The first was a PhoneGap app and then a client site that needed a couple simple pages of content. I thought this was a clever way to feel like I was developing an easily scalable & maintainable project and still just end up with simple HTML, CSS and JS files to upload at the end.
+
+###But I don't need everything include
+Okay, then remove it! When youre learning new things it can be frustrating that many tutorials are either for complete noobs or for the people with higher level experience.  I think this template does a nice job of being a healthy balance between bare bones and entirely too robust.
+
+###Who made this bad boy?
+
 This template was produced by Terri Swallow [@terrianns](http://twitter.com/terrianns)
