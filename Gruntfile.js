@@ -89,7 +89,7 @@ module.exports = function (grunt) {
     },
     clean: {
       build: {
-        src: ["www/build/js", "www/build/css", "www/src/sass/compiled/*.css"]
+        src: ["www/build/js", "www/build/css", "www/src/sass/compiled/*.css", "www/build/images"]
       }
     },
 
