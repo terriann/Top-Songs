@@ -8,7 +8,10 @@
   Backbone.sync = function(method, model, success, error){
     success();
   }
-  var listView = new ListView();
+//  var listView = new ListView();
+	var appview = new AppView();
+
+
 })(jQuery);
 
 // <div style="float:left; margin-bottom:40px;"><img style="width:36px; margin:5px 10px 0 5px;" src="https://g.twimg.com/Twitter_logo_blue.png"/></div> <div style="background:rgb(245,245,255); padding:10px;">Follow me on Twitter: <a target="_blank" href="http://twitter.com/r2r">@r2r</a> </div>

@@ -1,26 +1,22 @@
 module.exports = function (grunt) {
 
-  var cssFiles =  [
-    'www/src/sass/compiled/fonts.css',
-    'www/src/sass/compiled/layout.css'
-  ];
-
   var jsFiles =  [
     'www/src/js/controllers/*',
     'www/src/js/models/*',
     'www/src/js/collections/*',
     'www/src/js/views/*',
-    'www/src/js/bootstrap.js'
+    'www/src/js/app.js'
   ];
 
   var jsLibs = [
-    'www/src/js/libraries/twig.js'
+    'www/src/js/libraries/twig.js',
+    'www/src/js/libraries/jquery.masonry-2.1.08-min.js'
   ];
 
   grunt.initConfig({
     concat: {
       css: {
-        src: cssFiles,
+        src: 'www/src/sass/compiled/*.css',
         dest: 'www/build/css/styles.css'
       },
       jslibs: {
