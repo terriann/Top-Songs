@@ -25,6 +25,7 @@ Set Origin URL to new projects repo
 
 ## Getting Grunt Going
 *You must have Node installed on the environment you are developing on. There's great articles on how to do this online.*
+*The grunt-contrib-sass module requires Ruby and Sass installed*
 
 In your command line run `npm init` and walk through the process to setup your `packages.json` file.
 
@@ -43,22 +44,22 @@ While you're working keep `grunt watch` running in the background and whenever a
 ##What's Build into QSS
 This project will allow you to edit the source files (located in `www/src`) and leverage different grunt modules to speed up your development.  The modules already included in the package.json file are as follows:
 
-- Grunt watch `grunt-contrib-watch`
-- Grunt clean `grunt-contrib-clean`
-- Grunt concat `grunt-contrib-concat`
-- Grunt copy `grunt-contrib-copy`
-- Grunt sass `grunt-contrib-sass`
-- Grunt cssmin `grunt-contrib-cssmin`
-- Grunt uglify `grunt-contrib-uglify`
-- Grunt includes `grunt-includes`
+- Grunt watch `grunt-contrib-watch` [Github Repo](https://github.com/gruntjs/grunt-contrib-watch)
+- Grunt clean `grunt-contrib-clean` [Github Repo](https://github.com/gruntjs/grunt-contrib-clean)
+- Grunt concat `grunt-contrib-concat` [Github Repo](https://github.com/gruntjs/grunt-contrib-concat)
+- Grunt copy `grunt-contrib-copy` [Github Repo](https://github.com/gruntjs/grunt-contrib-copy)
+- Grunt sass `grunt-contrib-sass` [Github Repo](https://github.com/gruntjs/grunt-contrib-sass)
+- Grunt cssmin `grunt-contrib-cssmin` [Github Repo](https://github.com/gruntjs/grunt-contrib-cssmin)
+- Grunt uglify `grunt-contrib-uglify` [Github Repo](https://github.com/gruntjs/grunt-contrib-uglify)
+- Grunt includes `grunt-includes` [Github Repo](https://github.com/gruntjs/grunt-contrib-clean)
 
 The `Gruntfile.js` included is designed to do the following:
 
 - **Clean**  
 Purges files based on the following rules  
-`www/build/js`  
-`www/build/css` 
-`www/build/images`  
+`www/build/js`
+`www/build/css`
+`www/build/images`
 `www/src/sass/compiled/*.css`  
 This effectively cleans our the workspace to make sure only current files are affected by the next steps
 - **sass**  
