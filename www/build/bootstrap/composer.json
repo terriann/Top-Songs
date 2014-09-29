@@ -1,0 +1,6 @@
+{
+    "name": "terris/tinker",
+    "require": {
+        "google/apiclient": "1.0.*@dev"
+    }
+}

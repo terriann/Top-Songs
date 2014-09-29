@@ -25,5 +25,5 @@ nbproject
 .sublime-project
 .sublime-workspace
 
-/www/build/
+/www/src/
 /node_modules/

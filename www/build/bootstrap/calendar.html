@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="./favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+	    var API_KEY = 'AIzaSyB8XsFg07W7j7auMgm6Cx_qtWFbNNFBk6c';
+
+		var CALENDAR_ID = 'nkvgajubn1didma26d8fcijs1c%40group.calendar.google.com';
+		var CLIENT_ID = '307914578402-lh7dgsmkt390hinj6hlb2o0mu0768v08.apps.googleusercontent.com';
+		var SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
+
+	</script>
+
+  </head>
+
+  <body>
+
+    <div>
+
+<script type="text/javascript">
+
+	var CLIENT_ID = '307914578402-lh7dgsmkt390hinj6hlb2o0mu0768v08.apps.googleusercontent.com';
+    var API_KEY = 'AIzaSyB8XsFg07W7j7auMgm6Cx_qtWFbNNFBk6c';
+
+	var CALENDAR_ID = 'nkvgajubn1didma26d8fcijs1c@group.calendar.google.com';
+	var SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
+
+
+	//var CLIENT_ID = '______________.apps.googleusercontent.com';
+    //var API_KEY = '_________________';
+
+	//var CALENDAR_ID = '________________@group.calendar.google.com';
+	//var SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
+
+	function handleClientLoad() {
+		gapi.client.setApiKey(API_KEY);
+		window.setTimeout(checkAuth, 1);
+	}
+
+	function checkAuth() {
+		gapi.auth.authorize({client_id: CLIENT_ID, scope: SCOPE, immediate: true}, handleAuthResult);
+	}
+
+	function handleAuthResult() {
+	    gapi.client.load('calendar', 'v3', function() {
+	    	console.log('loaded.');
+	        var today = new Date(),
+	            request;
+
+	        request = gapi.client.calendar.calendarList.get({
+	            calendarId: CALENDAR_ID,
+	            timeMin: (new Date(today.getFullYear(), today.getMonth(), today.getDay(), 0, 0, 0, 0)).toISOString(),
+	            timeMax: (new Date(today.getFullYear(), today.getMonth()+6, today.getDay(), 23, 59, 59, 999)).toISOString(),
+	            fields: 'items(creator(displayName,email),end,endTimeUnspecified,start,summary)'
+	        });
+
+	        request.execute(function(response) {
+	        	// Do something with response
+	        	console.log(response);
+	        });
+
+	    });
+	}
+
+</script>
+<script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <a href="https://console.developers.google.com/project/noted-feat-714/apiui/credential">API login</a> | <a href="https://developers.google.com/google-apps/calendar/">API Docs</a> | <a href="https://groups.google.com/forum/embed/?place=forum/google-calendar-api">Calendar API Google Group</a>
+  </body>
+</html>
+
+
