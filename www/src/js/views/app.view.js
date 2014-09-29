@@ -15,30 +15,20 @@
 
   		var self = this;
 
-		$.ajax({
-	        type: "GET",
-	        url: '/itunes-music.json',
-	        data: "album=" + this.albumName,
-	        dataType: "json",
-	        success: function(data){
-				$.each(data.feed.entry, function(key,value) {
-					var song_model = new Song(value);
+		  var api = "https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json?callback=?";
+		  $.getJSON( api, {
+		  })
+		    .done(function( data ) {
+				$.each(data.feed.entry, function(key,item) {
+					console.log('item', item);
+					var song_model = new Song(item);
 					self.songs.add( song_model );
-					if(key>10) {
-						return false;
-					}
 				});
 
-				console.log('songliest', $('#song-list'));
-				
 				$('#song-list').masonry({
 					itemSelector: 'li'
 				});
+		    });
 
-	        },
-	        error: function(jqXHR, textStatus, errorThrown){
-	            console.error("FETCH FAILED: " + errorThrown);
-	        }
-	    });
 	}
   });
