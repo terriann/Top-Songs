@@ -9,8 +9,7 @@ module.exports = function (grunt) {
   ];
 
   var jsLibs = [
-    'www/src/js/libraries/twig.js',
-    'www/src/js/libraries/jquery.masonry-2.1.08-min.js'
+    'www/src/js/libraries/*.js'
   ];
 
   grunt.initConfig({
@@ -18,6 +17,10 @@ module.exports = function (grunt) {
       css: {
         src: 'www/src/sass/compiled/*.css',
         dest: 'www/build/css/styles.css'
+      },
+      csslibs: {
+        src: 'www/src/sass/libraries/*.css',
+        dest: 'www/build/css/libraries.css'
       },
       jslibs: {
         src: jsLibs,
@@ -71,7 +74,8 @@ module.exports = function (grunt) {
           //IOS specific
          // { expand: true, flatten: true, src: ['Resources/icons/**'], dest: 'platforms/ios/Sample/Resources/icons/', filter: 'isFile'},
           { expand: true, flatten: true, src: ['www/src/fonts/**'], dest: 'www/build/css/fonts/', filter: 'isFile'},
-          { expand: true, flatten: true, src: ['www/src/images/**'], dest: 'www/build/images/', filter: 'isFile'}
+          { expand: true, flatten: true, src: ['www/src/images/*'], dest: 'www/build/images/', filter: 'isFile'},
+          { expand: true, flatten: true, src: ['www/src/images/circle.skin/**'], dest: 'www/build/images/circle.skin', filter: 'isFile'}
 
         ]
       }
@@ -79,7 +83,8 @@ module.exports = function (grunt) {
     cssmin: {
       compress: {
         files: {
-          'www/build/css/styles.min.css': 'www/build/css/styles.css'
+          'www/build/css/styles.min.css': 'www/build/css/styles.css',
+          'www/build/css/libraries.min.css': 'www/build/css/libraries.css'
         }
       }
     },
@@ -111,7 +116,7 @@ module.exports = function (grunt) {
         tasks: ['concat:js', 'uglify']
       },
       html: {
-        files: ['www/src/html/*.scss'],
+        files: ['www/src/html/*'],
         tasks: ['includes']
       },
       misc: {
