@@ -1,0 +1,9 @@
+<script type="text/html" id="item_tpl">
+    <span style="color:black;">{{ part1 }} {{ part2 }}</span> &nbsp; &nbsp; <span class="swap"
+                                                                                  style="font-family:sans-serif; color:blue; cursor:pointer;">[swap]</span>
+    <span class="delete" style="cursor:pointer; color:red; font-family:sans-serif;">[delete]</span>
+</script>
+<script type="text/html" id="list_tpl">
+    <button id='add'>Add list item</button>
+    <ul></ul>
+</script>

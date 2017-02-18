@@ -1,38 +1,38 @@
 module.exports = function (grunt) {
 
     var jsFiles = [
-        'www/src/js/controllers/*',
-        'www/src/js/models/*',
-        'www/src/js/collections/*',
-        'www/src/js/views/*',
-        'www/src/js/app.js'
+        'src/js/controllers/*',
+        'src/js/models/*',
+        'src/js/collections/*',
+        'src/js/views/*',
+        'src/js/app.js'
     ];
 
     var jsLibs = [
-        'www/src/js/libraries/*.js'
+        'src/js/libraries/*.js'
     ];
 
     grunt.initConfig({
         concat: {
             css: {
-                src: 'www/src/sass/compiled/*.css',
-                dest: 'www/build/css/styles.css'
+                src: 'src/sass/compiled/*.css',
+                dest: 'docs/css/styles.css'
             },
             csslibs: {
-                src: 'www/src/sass/libraries/*.css',
-                dest: 'www/build/css/libraries.css'
+                src: 'src/sass/libraries/*.css',
+                dest: 'docs/css/libraries.css'
             },
             jslibs: {
                 src: jsLibs,
-                dest: 'www/build/js/libraries.js'
+                dest: 'docs/js/libraries.js'
             },
             js: {
                 src: jsFiles,
-                dest: 'www/build/js/app.js'
+                dest: 'docs/js/app.js'
             },
             jstemplates: {
-                src: ['www/src/templates/*.twig'],
-                dest: 'www/build/includes/jstemplates.tpl'
+                src: ['src/templates/*.twig'],
+                dest: 'docs/includes/jstemplates.tpl'
             }
         },
 
@@ -40,19 +40,19 @@ module.exports = function (grunt) {
             js: {
                 options: {
                     sourceMap: true,
-                    sourceMapName: 'www/build/js/app.js.map'
+                    sourceMapName: 'docs/js/app.js.map'
                 },
                 files: {
-                    'www/build/js/app.min.js': 'www/build/js/app.js'
+                    'docs/js/app.min.js': 'docs/js/app.js'
                 }
             },
             jslibs: {
                 options: {
                     sourceMap: true,
-                    sourceMapName: 'www/build/js/libraries.js.map'
+                    sourceMapName: 'docs/js/libraries.js.map'
                 },
                 files: {
-                    'www/build/js/libraries.min.js': 'www/build/js/libraries.js'
+                    'docs/js/libraries.min.js': 'docs/js/libraries.js'
                 }
             }
         },
@@ -60,9 +60,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'www/src/sass/',
+                    cwd: 'src/sass/',
                     src: ['*.scss'],
-                    dest: 'www/src/sass/compiled/',
+                    dest: 'src/sass/compiled/',
                     ext: '.css'
                 }]
             }
@@ -76,22 +76,22 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['www/src/fonts/**'],
-                        dest: 'www/build/css/fonts/',
+                        src: ['src/fonts/**'],
+                        dest: 'docs/css/fonts/',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
                         flatten: true,
-                        src: ['www/src/images/*'],
-                        dest: 'www/build/images/',
+                        src: ['src/images/*'],
+                        dest: 'docs/images/',
                         filter: 'isFile'
                     },
                     {
                         expand: true,
                         flatten: true,
-                        src: ['www/src/images/circle.skin/**'],
-                        dest: 'www/build/images/circle.skin',
+                        src: ['src/images/circle.skin/**'],
+                        dest: 'docs/images/circle.skin',
                         filter: 'isFile'
                     }
 
@@ -101,24 +101,24 @@ module.exports = function (grunt) {
         cssmin: {
             compress: {
                 files: {
-                    'www/build/css/styles.min.css': 'www/build/css/styles.css',
-                    'www/build/css/libraries.min.css': 'www/build/css/libraries.css'
+                    'docs/css/styles.min.css': 'docs/css/styles.css',
+                    'docs/css/libraries.min.css': 'docs/css/libraries.css'
                 }
             }
         },
         clean: {
             build: {
-                src: ["www/build/js", "www/build/css", "www/src/sass/compiled/*.css", "www/build/images"]
+                src: ["docs/js", "docs/css", "src/sass/compiled/*.css", "docs/images"]
             }
         },
 
         includes: {
             build: {
-                cwd: 'www/src/html',
+                cwd: 'src/html',
                 src: ['*.html'],
-                dest: 'www/build',
+                dest: 'docs',
                 options: {
-                    includePath: 'www/build/includes',
+                    includePath: 'docs/includes',
                     flatten: true,
                 }
             }
@@ -126,7 +126,7 @@ module.exports = function (grunt) {
 
         watch: {
             sass: {
-                files: ['www/src/sass/*.scss'],
+                files: ['src/sass/*.scss'],
                 tasks: ['sass', 'concat:css', 'cssmin']
             },
             js: {
@@ -134,11 +134,11 @@ module.exports = function (grunt) {
                 tasks: ['concat:js', 'uglify']
             },
             html: {
-                files: ['www/src/html/*'],
+                files: ['src/html/*'],
                 tasks: ['includes']
             },
             misc: {
-                files: ['www/src/html/*.scss'],
+                files: ['src/html/*.scss'],
                 tasks: ['includes']
             }
         }

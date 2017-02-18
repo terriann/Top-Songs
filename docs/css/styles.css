@@ -1,0 +1,55 @@
+body {
+  background-color: #272D4D; }
+
+#song-list {
+  width: 100%; }
+  #song-list .card {
+    list-style: none;
+    margin: 1px;
+    padding: 0;
+    width: 200px;
+    float: left; }
+    #song-list .card .album {
+      width: 200px;
+      height: 200px; }
+    #song-list .card .artist {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      background: #000;
+      color: #D3EEE2;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      font-size: 1em;
+      opacity: 0.8;
+      -webkit-transition: -webkit-transform 0.2s, color 0.2s;
+      transition: transform 0.2s, color 0.2s; }
+    #song-list .card .song {
+      position: relative;
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      background: #000;
+      color: #D3EEE2;
+      text-align: right;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      font-size: 1em; }
+    #song-list .card:hover .preview {
+      position: absolute;
+      bottom: 0;
+      top: 50%;
+      margin: 0;
+      padding: 10px;
+      background-color: #000;
+      height: 60px;
+      width: 60px; }
+
+/*# sourceMappingURL=app.css.map */
