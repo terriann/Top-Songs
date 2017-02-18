@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
-    <script src="js/libraries.min.js"></script>
+
+    <link rel="icon" href="./favicon.ico">
+
+    <title>Top Songs</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/libraries.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="css/styles.css" media="all" rel="stylesheet" type="text/css"/>
+
 </head>
+
 <body>
 
+<div>
+    <div id="song-list">
+    </div>
 
-<script type="text/html" id="item_tpl">
-    <span style="color:black;">{{ part1 }} {{ part2 }}</span> &nbsp; &nbsp; <span class="swap"
-                                                                                  style="font-family:sans-serif; color:blue; cursor:pointer;">[swap]</span>
-    <span class="delete" style="cursor:pointer; color:red; font-family:sans-serif;">[delete]</span>
-</script>
-<script type="text/html" id="list_tpl">
-    <button id='add'>Add list item</button>
-    <ul></ul>
-</script>
+</div> <!-- /container -->
 
 
-<script src="js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+<script src="js/libraries.min.js"></script>
+<script src="js/app.min.js"></script>
+
+<!-- Custom styles for this template -->
 </body>
 </html>
+
+
