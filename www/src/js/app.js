@@ -3,13 +3,13 @@
 // _Working example: [5.html](../5.html)._
 
 //
-(function($){
-  // `Backbone.sync`: Overrides persistence storage with dummy function. This enables use of `Model.destroy()` without raising an error.
-  Backbone.sync = function(method, model, success, error){
-    success();
-  }
+(function ($) {
+    // `Backbone.sync`: Overrides persistence storage with dummy function. This enables use of `Model.destroy()` without raising an error.
+    Backbone.sync = function (method, model, success, error) {
+        success();
+    }
 //  var listView = new ListView();
-	var appview = new AppView();
+    var appview = new AppView();
 
 
 })(jQuery);

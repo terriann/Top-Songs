@@ -1,10 +1,9 @@
-  
-  SongView = Backbone.View.extend({
+SongView = Backbone.View.extend({
     tagName: "div", //this defaults to div if you don't declare it.
     className: 'card',
     events: { //none of these work
-        'hover':'handleHover',
-        'mouseover':'handleHover',
+        'hover': 'handleHover',
+        'mouseover': 'handleHover',
         'click .preview': 'clickPreview'
     },
     initialize: function (data) {
@@ -15,19 +14,19 @@
     },
 
     render: function () {
-    	// This is dumb, should be able to read template
+        // This is dumb, should be able to read template
         var tpl = '<a href="' + this.song_model.get('link') + '"><img src="' + this.song_model.get('images').large + '" class="album" /></a>' +
-			'<div class="song">' + this.song_model.get('song_name') + '</div>' +
-			'<div class="artist">' + this.song_model.get('artist_name') + '</div>' +
-			'<div class="preview"></div>' +
-		'';
+            '<div class="song">' + this.song_model.get('song_name') + '</div>' +
+            '<div class="artist">' + this.song_model.get('artist_name') + '</div>' +
+            '<div class="preview"></div>' +
+            '';
 
         this.el.innerHTML = tpl;
         return this;
 
     },
 
-    handleHover: function(ev) {
+    handleHover: function (ev) {
         console.debug("Hovering! " + ev + this);
         console.debug(ev);
 
@@ -35,15 +34,15 @@
         return false;
     },
 
-    clickPreview: function(e){
+    clickPreview: function (e) {
         alert('play!');
-        var myCirclePlayer = new CirclePlayer('#song-'+this.song_model.get('id') + ' .preview',
-        {
-            m4a: this.song_model.get('song_preview')
-        }, {
-            cssSelectorAncestor: "#cp_container_1"
-        });
+        var myCirclePlayer = new CirclePlayer('#song-' + this.song_model.get('id') + ' .preview',
+            {
+                m4a: this.song_model.get('song_preview')
+            }, {
+                cssSelectorAncestor: "#cp_container_1"
+            });
 
         myCirclePlayer.play();
     }
-  });
+});
