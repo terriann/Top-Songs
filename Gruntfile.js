@@ -108,7 +108,7 @@ module.exports = function (grunt) {
         },
         clean: {
             build: {
-                src: ["docs/js", "docs/css", "src/sass/compiled/*.css", "docs/images"]
+                src: ['docs/js', 'docs/css', 'src/sass/compiled/*.css', 'docs/images', 'docs/*.html']
             }
         },
 
