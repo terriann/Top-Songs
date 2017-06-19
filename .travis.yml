@@ -4,5 +4,5 @@ node_js:
   - "7"
 
 before_script:
-  - node_modules/.bin/eslint --ext .js,.vue src test/unit/specs'
+  - npm run lint
   - npm run unit
