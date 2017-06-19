@@ -5,4 +5,4 @@ node_js:
 
 before_script:
   - npm run lint
-  - npm run unit
+  - npm test

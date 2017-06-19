@@ -1,6 +1,8 @@
-# top-songs
+# Top Songs
 
 > A top song preview single page app using vue.js
+
+[![Build Status](https://travis-ci.org/terriann/Top-Songs.svg?branch=master)](https://travis-ci.org/terriann/Top-Songs)
 
 ## Build Setup
 
@@ -16,9 +18,6 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-
-# run unit tests
-npm run unit
 
 # run all tests
 npm test
